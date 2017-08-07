@@ -57,3 +57,34 @@ You can also list any questions you would still want to ask to clarify the data 
 ----------------------------------------------
 
 ANSWER:
+
+      Dish
+---------------
+dish_id SERIAL PRIMARY KEY
+name VARCHAR(20)
+description VARCHAR(150)
+
+      Menu
+---------------
+menu_id SERIAL PRIMARY KEY
+menu_type VARCHAR(20)
+time DATETIME
+
+      Price
+---------------
+price_id SERIAL PRIMARY KEY
+amt INTEGER
+dish_id INTEGER FOREIGN KEY
+menu_id INTEGER FOREIGN KEY
+
+The dish table should have an id, name and description about the dish.
+The menu table should have an id, menu type (breakfast, lunch, dinner) and time.
+
+I though since a menu can have multiple dishes and a dish can be on multiple
+menus. There is a many to many relationship. If we add the middle table, price,
+then it changes to two one to many relationships. A dish can have multiple prices,
+and a menu can have multiple prices.
+
+The price table should have an id, amount, and two foreign keys, dish_id and menu_id.
+So, you can add different prices for different combinations of dishes and menus.
+
