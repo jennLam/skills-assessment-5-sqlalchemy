@@ -12,7 +12,7 @@ Nothing would be returned if that is typed. You would need to specify a 'fetchin
 record clause', .all(), .first(), or .one().
 
 Brand.query.filter_by(name='Ford') is like a question you're asking and the
-.all(), .first(), .one() is like the answer.
+.all(), .first(), .one() is like the answer you'd get.
 
 -------------
 QUESTION TWO:
