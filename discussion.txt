@@ -1,0 +1,59 @@
+-------------
+QUESTION ONE:
+-------------
+We have a model.py file with a class Brand, and that maps to a table 'brands' in a database.
+ 
+Explain what is returned and why when we type the following: 
+Brand.query.filter_by(name='Ford')
+----------------------------------------------
+
+ANSWER:
+Nothing would be returned if that is typed. You would need to specify a 'fetching
+record clause', .all(), .first(), or .one().
+
+Brand.query.filter_by(name='Ford') is like a question you're asking and the
+.all(), .first(), .one() is like the answer.
+
+-------------
+QUESTION TWO:
+-------------
+In your own words, describe what a middle table is and what type of relationship (many to one, many to many, one to one, etc.) it manages.
+----------------------------------------------
+
+ANSWER:
+A middle table is a table that connects two tables with a many to many relationship.
+In the lecture example, we have a book table and a user table where a user can
+comment on many books and a book can have many comments. In this case, you would be
+repeating information if you store comments in both book and user. So, a comment table
+is created to connect the two tables making two one to many relationships.
+
+---------------
+QUESTION THREE:
+---------------
+We are modeling a database for a restaurant and we have the following information from the restaurant management:
+
+    * The are three menus: breakfast, lunch, and dinner.
+
+    * We'd like to keep track of the times a menu is served in 24-hr time:
+        ** Breakfast is served from 8:00 a.m. - 11:30 a.m. (08:00 - 11:30)
+        ** Lunch is served from 11:30 a.m. - 4:30 p.m. (11:30 - 16:30)
+        ** Dinner is served from 4:30 p.m. - 10:00 p.m. (16:30-22:00)
+
+    * The restaurant has different dishes, and they want to be able to store the name and
+      description of each dish
+
+    * We want to be able to track which dishes appear on which menu, along with the price of 
+      each dish on the menu
+
+    * Some of the dishes are served on multiple menus (so they appear on lunch and dinner, 
+      for example, or on breakfast and lunch)
+
+    * If a dish is served on multiple menus, the dish costs less earlier in the day than it
+      does later in the day (ex: a dish at lunch costs less than it would at dinner).
+ 
+Please describe the tables you would create to model these relationships and save this information in a database. Please also list the columns you would put in each table.
+ 
+You can also list any questions you would still want to ask to clarify the data model.
+----------------------------------------------
+
+ANSWER:
